@@ -1,3 +1,2 @@
-web: gunicorn config.wsgi:application --log-file - --log-file debug
-python manage.py collectstatic --noinput
-manage.py migrate
+web: gunicorn api_blog.config.wsgi
+web: python api_blog/manage.py runserver --noreload
