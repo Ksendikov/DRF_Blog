@@ -1,2 +1,1 @@
-web: gunicorn api_blog.config.wsgi
-python manage.py runserver
+web: bin/start-pgbouncer-stunnel gunicorn api_blog.config.wsgi
