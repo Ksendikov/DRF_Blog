@@ -60,7 +60,7 @@ class FeedBackView(APIView):
             from_email = data.get('email')
             subject = data.get('subject')
             message = data.get('message')
-            send_mail(f'От {name} | {subject}', message, from_email, ['iksendikov@gmail.com'])
+            send_mail(f'От {name} {from_email} | {subject}', message, from_email, ['iksendikov@gmail.com'])
             return Response({
                 'success': 'Sent'
             })
