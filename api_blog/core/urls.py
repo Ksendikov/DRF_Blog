@@ -1,7 +1,7 @@
 from django.urls import include, path
 from rest_framework.routers import DefaultRouter
 
-from .views import (AsideView, CommentView, FeedBackView, PostViewSet,
+from .views import (AsideView, AddCommentView, GetCommentsView, FeedBackView, PostViewSet,
                     ProfileView, RegisterView, TagDetailView, TagView)
 
 router = DefaultRouter()
@@ -15,6 +15,6 @@ urlpatterns = [
     path('feedback/', FeedBackView.as_view()),
     path('register/', RegisterView.as_view()),
     path('profile/', ProfileView.as_view()),
-    path('comments/', CommentView.as_view()),
-    path('comments/<slug:post_slug>/', CommentView.as_view()),
+    path('comments/', AddCommentView.as_view()),
+    path('comments/<slug:post_slug>/', GetCommentsView.as_view()),
 ]
